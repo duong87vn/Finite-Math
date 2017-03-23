@@ -1,1 +1,643 @@
 # Finite
+
+\documentclass{amsart}
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+\linespread{1.6}
+\usepackage{dirtytalk}
+\newtheorem{theorem}{Theorem}
+\newtheorem{defn}{Definition}
+
+\author{DUONG THAN} 
+\title{Finite Math 147 }
+\begin{document}
+\maketitle
+\large
+
+\textbf{Textbook: Mathematical Applications. Author: Harshbarger, Reynolds. Tenth Edition}
+
+\section{Chapter 1}
+\subsection{Solutions of Linear Equations and Inequalities in One Variables}
+
+\subsection{Functions}
+
+\begin{enumerate}
+
+	\item Relations 
+	
+	\item Functions
+		\begin{enumerate}
+			\item Definition
+			
+			\item Examples 
+			
+			\item Function notation
+				Dependent variables \\
+				Independent variables \\
+			\item Domain and Range 
+			
+			\item Graph a function \\
+			
+			\item Operations with Functions
+			
+			\item Composite Functions 
+			
+		
+		\end{enumerate}
+	\item Activity 
+	
+	\item Homework page 73
+	
+
+\end{enumerate}
+\subsection{Linear Functions}
+
+\subsection{Graphs and Graphing Utilities}
+
+\subsection{Solution of Systems of Linear Equations}
+
+\subsection{Application of Functions in Business and Economics}
+
+\section{Quadratic and Other Special Functions}
+
+\subsection{Quadratic Equations}
+
+\subsection{Quadratic Functions; Parabolas}
+
+\subsection{Business Application Using Quadratics}
+
+\subsection{Special Functions and Their Graphs}
+
+\subsection{Modeling; Fitting Curves to  Data with Graphing Utilities}
+
+\newpage
+\section{Matrices}
+
+\subsection{Matrices}
+
+\begin{enumerate}
+
+	\item \textbf{Application Preview}
+	Data in tabular form can be stored in matrices, which are useful for solving an assortment of problems, including the following. The table below summarizes the dollar value ( in millions) of 2006 U.S exports and imports of cars, trucks, and automotive parts for selected countries. If the data are formed into two matrices, one for exports and one for imports, then the balance of trade with the selected countries for cars, trucks, and parts will be the different of those two matrices. \
+	
+	\begin{tabular}{|cccc||ccc|}
+		\hline
+		& & Exports  & & & Imports &  \\
+		& Cars & Trucks & Parts & Cars & Trucks & Parts \\
+		Canada & 13,165 & 11,992 & 31,952& 36,600 & 12,250 & 20,132 \\
+		Japan & 477 & 59& 1755 & 43,522& 986 & 15,704 \\
+		Mexico & 3451 & 1007 & 12,606 & 14,201 & 9559 & 25,217\\
+		\hline
+	\end{tabular} \\
+	\item \textbf{What is a matrix?}
+	A matrix is a rectangular / square grid of numbers.  \\
+
+	\textbf{Example:} Let $A$ be an $m\times n$ matrix where $m$ is the number of rows and $n$ is the number of columns.\\
+	
+	$A = \begin{bmatrix}
+		a_{11} & a_{12} & \dots & a_{1n} \\
+		a_{21} & a_{22} & \dots & a _{2n} \\
+		$\dots$ \\
+		a_{m1} & a_{m2} & \dots & a_{mn} \\
+		
+	
+	\end{bmatrix}$\\
+	
+	\textbf{Example ( the application preview ): }\\
+	Let $A $ be the exports matrix  and $B$ be the import matrix. \\
+	\vspace{2in}
+	
+		\begin{enumerate}
+		
+			\item Rows 
+			
+			\item Columns 
+			
+			\item Entries or Elements 
+			
+			\item Order - Size 
+			
+		\end{enumerate}
+	
+	\item \textbf{Matrix Sums} \\
+	
+		Example: Find the sum of A and B if : \\
+		
+		$ A = \begin{bmatrix}
+		1 & 2 & 3 \\
+		4 & -1 & -2 \\
+		
+		\end{bmatrix} $ and $B = \begin{bmatrix}     
+		                                 
+		                                 	-1 & 2 & -3 \\
+						-2 & 0 & 1 
+		                                 
+		                                          \end{bmatrix}$ \\
+		\vspace{2in}
+		
+		Balance of Trade: \\
+		\vspace{2in}
+		
+		Total exports and imports: \\
+		\vspace{2in}
+			
+	\item \textbf{Matrix Multiplication}
+	
+		Monthly Average of balance of trade: \\
+
+	\vspace{2in}
+	
+	
+		
+
+\end{enumerate}
+\say{Data Science is the sexiest job of the 21 century} \\
+
+Why matrices?  Using matrices is a simple way to present data. When we have a huge amount of data with thousands information from thousands sources, we want to put our data into a matrix so we can use different tools to sort, summarize or analyze the information.    \\	
+
+\textbf{Activity:} Problem 49 page 197.\\
+\textbf{Homework:....} \\
+
+\newpage
+\subsection{Multiplication of Matrices}
+\begin{enumerate}
+
+\item Application Preview \\
+
+Pentico industries is a manufacturing company that has two divisions, located at Clarion and Brooks, each of which needs different amounts ( units ) of production materials as described by the following table. \\
+
+\begin{tabular}{|c|c|c|c|}
+\hline
+& Steel & Wood & Plastic \\
+Clarion & 20 & 30 & 8  \\
+Brooks & 22 & 25 & 15 \\
+\hline
+\end{tabular} \\
+
+These raw materials are supplied by Western Supply and Coastal Supply, with prices given in dollars per unit in the following table.\\
+
+\begin{tabular}{|c|c|c|}
+\hline
+& Western & Coastal \\
+Steel & 300 & 290 \\
+Wood & 100 & 90 \\
+Plastic & 145 & 180 \\
+\hline
+\end{tabular}\\
+
+If one supplier must be chosen to provide all materials for either or both divisions of Pentico, company officials can decide which supplier to choose by contracting matrices from these tables and using matrix multiplication.\\
+
+\item Matrix Product \\
+Given an $m \times n$ matrix $A $ and an $n \times p$ matrix $B$, the matrix product $AB$ is an $m \times p$ matrix $C$, with the $ij$ entry if $C$ given by the formula: \\
+\[
+c_{ij} = a_{i1}b_{1j} + a_{i2}b_{2j} + \dots + a_{in}b_{nj}
+\]
+
+\textbf{Illustration}
+
+\vspace{2in}
+
+
+\textbf{Example:} Find AB if \\
+
+$A = \begin{bmatrix}
+	3 & 4 \\
+	2 & 5 \\
+	6 & 10 \\
+\end{bmatrix}
+$ and $B = \begin{bmatrix}
+			a & b & c & d \\
+			e & f & g & h \\
+
+		\end{bmatrix}	$
+
+\vspace{2in}
+
+\item Identity Matrix 
+
+An $n \times n$ square matrix ( where n is any natural number ) that has 1s down its diagonal and 0s everywhere else is called an identity matrix. \\
+
+For example: \\
+
+$I = \begin{bmatrix}
+	1 & 0 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & 1 \\
+\end{bmatrix}$ \\
+
+$I$ is an $3 \time 3 $ identity matrix and for any $3 \time 3$ matrix A, $IA = AI$. \\ 
+
+\item Example: Material Supply ( Application Preview):  
+Decide which supplier should be chosen to supply for Clarion and Brooks division. \\
+
+\vspace{4in}
+
+\item \textbf{Activity:} Encoding Messages\\
+Messages can be encoded through the use of a code and an encoding matrix. For example, given the code: \\
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+a & b & c & d & f &e &g &h & i & j & k & l & m & n & o & p & q & r & s & t & u & v & w & x & y \\ 
+\hline
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9& 10 & 11 & 12 &13 & 14 &15 &16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 \\
+\hline
+\end{tabular}
+
+\begin{tabular}{|c|c|}
+\hline
+z & blank \\
+\hline
+26 & 27 \\
+\hline
+\end{tabular} \\
+and the encoding matrix is \\
+$A = \begin{bmatrix}
+		3 & 5  \\
+		4 & 6 \\
+\end{bmatrix}$
+
+We can encode a message by separating it into number pairs ( because A is a $2 \times 2$ matrix) and then multiplying each pair by A. Use this code and matrix to encode the message \say{good job}.\\
+
+\textbf{Solution}
+
+\vspace{4in}
+
+\item \textbf{Activity:} Venture Capital page 204\\
+
+
+\item \textbf{Homework:} page 206\\
+\end{enumerate}
+
+
+
+\newpage
+\subsection{Gauss-Jordan Elimination: Solving system of Equations}
+
+
+\begin{enumerate}
+
+\item Application Preview 
+
+
+\item Row Operation: The following row operation of an augmented matrix of a system produces an augmented matrix of an equivalent system, i.e, a system has the same solution to the original one. \\
+
+\begin{enumerate}
+ \item Interchange any two rows.
+ 
+ \item Multiply each element of a row by a nonzero constant.
+ 
+ \item Replace a row by the sum of itself with a multiple constant of another row of the matrix. 
+
+\end{enumerate}
+
+\item Gauss - Jordan Elimination Method: Use row operation to produce a reduced form of augmented matrix for $n$ equations in $n$ variables. \\
+
+\textbf{Results}\\
+
+\begin{tabular}{|c|c|}
+
+\hline 
+1. Coefficient array is an identity matrix. & Unique solution \\
+ 2. Coefficient array is not an identity matrix with either:  & \\
+ a. A row of 0s with a nonzero entry in the augment. & No solution\\
+ b. Or otherwise & Infinitely many solutions.\\
+ \hline
+\end{tabular} \\
+
+\textbf{Example:} Solve the system \\
+
+$\begin{cases}
+x_1 + x_2 - x_3 + x_4 = 3 \\
+x_2 + x_3 + x_4 = 1\\
+x_1 - 2x_3 + x_4 = 6 \\
+2x_1 -x_2 -5x_3 -3x_4 = -5 \\
+\end{cases} $
+
+\vspace{4in}
+
+
+
+\textbf{Example:} Solve the system \\
+
+$\begin{cases}
+x + 2y - 2z  = 4 \\
+2x + 5y = 3\\
+x + y - 6z = 9 \\
+
+\end{cases} $
+
+\vspace{4in}
+
+
+\item Activity: Investment page 218
+
+\vspace{8in}
+
+\item Homework page 219\\
+
+\end{enumerate}
+
+
+
+
+\newpage
+\subsection{Inverse of a Square Matrix; Matrix Equations}
+
+\begin{enumerate}
+	\item Inverse Matrices \\
+		Two square matrices, A and B, are called inverses of each other if 
+		\[
+		AB = I  \quad \text{and} \quad BA = I 
+		\]
+	In this case, $B = A^{-1}$ and $A = B^{-1}$. 
+	
+	 \textbf{Find the inverse of a square matrix. }
+	 
+	 \begin{enumerate}
+	 \item Form the augmented matrix $[A|I]$.
+	 \item Perform row operations on $[A|I]$ until we have an augmented matrix of the form $[I|B]$.
+	 \item The matrix B ( on the right ) is the inverse of matrix A.
+	 \end{enumerate}
+	Note: if A has no inverse, the reduction process on $[A|I]$ will yield a row of zeros in the left half of the augmented matrix. \\
+	\textbf{Example}:
+	
+	$A = \begin{bmatrix}
+		2 & 5 & 4 \\
+		1 & 4 & 3 \\
+		1 & -3 & -2 \\
+	\end{bmatrix}$
+	
+	\vspace{8in}
+	
+	Why do we care about the inverse of a matrix? \\
+	For an example, we want to solve for $X$ in the following equation: \\
+	$AX = B$ ; where A, X  and B are matrices. \\
+	So,
+\begin{equation} \label{eq1}
+\begin{split}
+A^{-1} (AX ) & = A^{-1}B \\
+ IX & = A^{-1}B \\
+ X & = A^{-1}B \\
+\end{split}
+\end{equation} \\
+
+\textbf{Example:} Use inverse matrices to solve the system: \\
+
+$\begin{cases}
+	7x - 5y = 12 \\
+	2x - 3y = 6 \\
+\end{cases}$
+
+\vspace{4in}
+
+	
+	\item \textbf{Square Matrices}
+	
+	\item \textbf{Inverse Matrices}
+
+
+	\item \textbf{ 2 X 2 Matrices}
+		
+		
+		\begin{enumerate}
+		
+			\item Determinant 
+		
+			\item Inverse \\
+		
+		\end{enumerate}
+
+\item Activity: Freight Logistic with Technology: page 229\\
+
+\item Homework page 234.\\
+
+\end{enumerate}
+
+
+\newpage
+\section{Inequalities and Linear Programming}
+
+
+\subsection{Linear Inequalities in Two Variables}  
+
+\begin{enumerate}
+
+\item Terminology: \\
+
+Corner of a region: \\
+
+\item One Linear Inequality in Two Variables\\
+Example: $y < x$.
+
+\vspace{2in}
+
+ 
+\item System of Linear Inequalities \\
+Example: Graph the solution of the system and determine the corners of the region.\\
+$ \begin{cases}
+3x - 2y \geq 4 \\
+x + y - 3 > 0
+
+\end{cases}$
+ \vspace{4in}
+ \item Example: Graph the solution of the system and determine the corners of the region.\\
+ 
+ $\begin{cases}
+ 
+ x + 2y \leq 10 \\
+ 2x + y \leq 14 \\
+ x \geq 0, y \geq 0\\
+ 
+ \end{cases}$
+
+
+\vspace{4in}
+\item Example: Use a graphing calculator to find the following:
+	\begin{enumerate}
+		\item Find the region determined by the inequalities below.\\
+		$ \begin{cases}
+			2x + 3y \leq 12 \\
+			4x + 2y \leq 16 \\
+			x \geq 0, y \geq 0 \\
+		
+		\end{cases} $
+	\vspace{4in}
+		\item Determine the corners of the region
+	\end{enumerate}
+\vspace{4in}
+\item Activity: (Problem 29 page 266). The Wellbuild Company produces twi types of wood chippers, economy and deluxe. The deluxe model requires 3 hours to assemble and 1/2 hour to paint, and the economy model requires 2 hours to assemble and 1 hour to paint. The maximum number of assembly hours available is 24 hours per day, and the maximum number of painting hours available is 8 per day. \\
+	\begin{enumerate}
+		\item Write the system of inequalities that describes the constraints on the number of each type of wood chipper produced. Begin by identifying what $x$ and $y$ represent.
+		
+		\item Graph the solution of the system of inequalities and find the corners of the solution region.
+	
+	\end{enumerate}
+\vspace{4in}
+\item Homework page 265
+\end{enumerate}
+
+\newpage
+\subsection{Linear Programming: Graphical Methods}
+
+\begin{enumerate}
+
+\item Terminology: \\
+
+Feasible region: \\
+
+Feasible solutions:\\
+
+Example: Find the maximum and minimum values of C = 2x + 3y subject to the contraints\\
+
+$\begin{cases}
+	x + 2y \leq 10\\
+	2x + y \leq 14 \\
+	x \geq 0, y \geq 0 \\
+	\end{cases}$ 
+\vspace{4in}
+
+Example: Find the maximum and minimum values of C = 4x + 3y subject to the contraints\\
+
+$\begin{cases}
+	2x + 3y \leq 12\\
+	4x - 2y \leq 8 \\
+	x \geq 0, y \geq 0 \\
+	\end{cases}$ 
+\vspace{4in}
+
+\item Solution of Linear Programming Problems
+
+	\begin{enumerate}
+		\item when the feasible region for a linear programming problem is closed and bounded, the objective function has a maximum value and a minimum value. 
+		\item When the feasible region is not closed and bounded, the objective function may have a maximum only, a minimum only, or no solution.
+		\item If a linear programming problem has a solution, then the optimal ( maximum or minimum) value of an objective function occurs at a corner of the feasible region determined by the constraints.
+		\item If the objective function has its optimal value at two corners, then it also has that optimal value at any point on the line ( boundary) connecting those two corners. 
+	\end{enumerate}
+
+\item Activity: 
+	\begin{enumerate}
+		\item Maximizing Revenue \\
+
+		\vspace{4in}
+		\item Minimizing Cost \\
+		\vspace{4in}
+		
+	\end{enumerate}
+
+\item Homework page 275
+
+\end{enumerate}
+\newpage
+\subsection{The Simplex Method}
+
+\begin{enumerate}
+
+\item Terminology
+
+	\begin{enumerate}
+		\item Slack variable 
+		
+		\item Simplex Matrix pr simplex tableau
+		
+		\item Pivot Column
+		
+		\item Pivot Row
+		
+		
+		\item Pivot Entry
+		
+		\item Basic Variables
+		
+		\item Nonbasic Variables
+		
+		\item Basic feasible solution
+		
+	\end{enumerate}
+\item Simplex Method Tasks
+	\begin{enumerate}
+		\item Task A: Setting up the matrix for the simplex method.\\
+			\begin{tabular}{|c|c|}
+			\hline
+			Inequalities & Equations with slack variables \\
+			 ... & ... \\
+			\hline
+			\end{tabular}
+			
+		\item Task B: Determining necessary operations and implementing those operations to reach solution. \\
+			From the simplex matrix, determine the pivot column and entry, then use row operation to change the pivot entry to 1 and create zeros elsewhere in the pivot column. \\
+			Keep repeating this step until all the indicators are non zero. \\
+		\item Task C: Reading the solution from the simplex matrix. 
+	\end{enumerate}
+		Note: \\
+		Pivot column contains the most negative indicator.\\
+		Pivot entry belongs to pivot row and has the smallest quotient (the most right entry on the same row divides that entry).\\
+		To reach a solution, all indicators have to be non negative. \\
+\item Solution types: 
+	\begin{enumerate}
+		\item Unique Solution
+		
+		\item Multiple Solutions: when the simplex matrix for the optimal value of f has a nonbasic variable with a zero indicator in its column, there may be multiple solutions giving the same optimal value for f. We can discover wether another solution exists by using the column of that nonbasic variable as the pivot column.
+		
+		\item No Solution: If, after the pivot column has been found, there are no positive coefficients in that column, no maximum solution exists. 
+	\end{enumerate}		
+\item Example: Complete tasks A, B, and C to find the maximum value of $f = 4x + 3y$ subject to \\
+	
+	$ \begin{cases}
+		x + 2y \leq 8 \\
+		2x + y \leq 10 \\
+	\end{cases} $	
+	
+	\vspace{8in}
+	
+\item Activity: Application Review\\
+The Solar Technology company manufactures three different types of hand calculators and classifies them as scientific, business, and graphing according to their calculating capability. The three types have production requirements given by the following table: \\
+
+\begin{tabular}{|c|c|c|c|}
+\hline
+& Scientific & Business & Graphing \\
+Electronic circuit components & 5& 7& 10\\
+Assembly time (hours) & 1& 3& 4\\
+Cases & 1 & 1 & 1\\
+\hline 
+\end{tabular} \\
+The firm has a monthly limit of 90,000 circuit components; 30,000 hours of labor, and 9000 cases. If the profit is $\$6$ for each scientific, $\$13$ for each business, and $\$20$ for each graphing calculator, how many of each should be produced to yield the maximum profit? What is the maximum profit? \\
+
+\newpage
+\vspace{8in}
+
+\item Homework page 293		
+\end{enumerate}
+\newpage
+\section{Exponential and Logarithmic Functions}
+
+
+\subsection{Exponential Functions}
+
+\newpage
+\subsection{Logarithmic Functions}
+
+\newpage
+\subsection{Exponential Equations}
+
+\newpage
+\section{Mathematics of Finance}
+
+\subsection{Simple Interest; Sequences}
+
+\newpage
+\subsection{Compound Interest; Geometric Sequences }
+
+\newpage
+\subsection{Future Values of Annuities}
+
+\newpage
+\subsection{Present Values of Annuities}
+
+\newpage
+\subsection{Loans and Amortization}
+
+
+
+
+
+\end{document}
